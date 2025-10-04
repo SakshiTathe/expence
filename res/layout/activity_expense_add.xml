@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@drawable/wave"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Expense_Add"
+    android:paddingTop="160dp">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20sp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="20sp">
+
+            <TextView
+                android:id="@+id/textcat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textbug"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Budget"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/valuecat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="@+id/textcat"
+                app:layout_constraintStart_toStartOf="@+id/textcat"
+                app:layout_constraintTop_toBottomOf="@+id/textcat" />
+
+            <TextView
+                android:id="@+id/valuebug"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="200"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="@+id/textbug"
+                app:layout_constraintStart_toStartOf="@+id/textbug"
+                app:layout_constraintTop_toBottomOf="@+id/textbug" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <EditText
+            android:id="@+id/amount"
+            android:layout_width="350dp"
+            android:layout_height="52dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/reoundtext"
+            android:clickable="false"
+            android:hint="Enter Your Amount"
+            android:inputType="text"
+            android:paddingVertical="16dp"
+            android:paddingStart="8dp"
+            android:textColorHint="@color/hintcol"
+            android:textSize="19sp"
+            app:hintTextColor="@color/darktxt" />
+        <!--android:inputType="number"-->
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="350dp"
+            android:layout_height="52dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/reoundtext"
+            android:hint="Select Date"
+            android:onClick="opencal"
+            android:paddingVertical="16dp"
+            android:paddingStart="8dp"
+            android:textColorHint="@color/hintcol"
+            android:textSize="19sp"
+            app:hintTextColor="@color/darktxt" />
+
+        <EditText
+            android:id="@+id/note"
+            android:layout_width="350dp"
+            android:layout_height="52dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/reoundtext"
+            android:clickable="false"
+            android:hint="Description"
+            android:inputType="text"
+            android:paddingVertical="16dp"
+            android:paddingStart="8dp"
+            android:textColorHint="@color/hintcol"
+            android:textSize="19sp"
+            app:hintTextColor="@color/darktxt" />
+
+        <Button
+            android:id="@+id/saveBtn"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/backbutton"
+            android:paddingHorizontal="10dp"
+            android:text="Save Transaction" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

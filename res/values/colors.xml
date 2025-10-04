@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <color name="botbar">#bb561e</color>
+    <color name="cardcolor">#fee3c4</color>
+    <color name="frontback">#f6cda0</color>
+    <color name="darktxt">#a8370c</color>
+    <color name="darktable">#E66F42</color>
+    <color name="lowgrad">#ED9C5D</color>
+    <color name="upgrad">#EFC296</color>
+    <color name="feedtxt">#c85a17</color>
+    <color name="hintcol">#e2a667</color>
+    <color name="homicon">#c9591b</color>
+    <color name="doubleicon">#dea24f</color>
+    <color name="formback">#fce9d8</color>
+</resources>

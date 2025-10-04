@@ -1,0 +1,23 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <!-- Define the background color -->
+  <item>
+    <shape android:shape="rectangle">
+      <solid android:color="@color/frontback" /> <!-- Set your desired background color -->
+    </shape>
+  </item>
+  <item>
+    <vector
+        android:width="1440dp"
+        android:height="320dp"
+        android:viewportWidth="470"
+        android:viewportHeight="350">
+
+      <path
+          android:pathData="M0,96L48,117.3C96,139 192,181 288,165.3C384,149 480,75 576,85.3C672,96 768,192 864,224C960,256 1056,224 1152,176C1248,128 1344,64 1392,32L1440,0L1440,0L1392,0C1344,0 1248,0 1152,0C1056,0 960,0 864,0C768,0 672,0 576,0C480,0 384,0 288,0C192,0 96,0 48,0L0,0Z"
+          android:fillColor="@color/botbar" /> <!-- Define the fill color for the path -->
+    </vector>
+  </item>
+
+</layer-list>
+

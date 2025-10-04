@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/backgradient">
+
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/materialToolbar"
+        android:background="@drawable/backgradient"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        app:menu="@menu/topbar"
+        app:title="Moneymanage"
+        app:titleCentered="true"
+        app:titleTextAppearance="@style/FontFamily"
+        app:titleTextColor="@color/darktxt"
+        />
+    <LinearLayout
+        android:id="@+id/middlecon"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/backgradient"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialToolbar">
+
+        <ViewFlipper
+            android:id="@+id/viewFlipper"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:autoStart="true"
+            android:flipInterval="1000"
+            android:inAnimation="@android:anim/slide_in_left"
+            android:outAnimation="@android:anim/slide_out_right">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageView2"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                app:shapeAppearanceOverlay="@style/roundimageview"
+                app:srcCompat="@drawable/exptrack3" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageView3"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                app:shapeAppearanceOverlay="@style/roundimageview"
+                app:srcCompat="@drawable/erptrack4" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageView4"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                app:shapeAppearanceOverlay="@style/roundimageview"
+                app:srcCompat="@drawable/exptrack5" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageView5"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                app:shapeAppearanceOverlay="@style/roundimageview"
+                app:srcCompat="@drawable/moneytrack2" />
+        </ViewFlipper>
+
+
+
+        <TextView
+            android:id="@+id/expset"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/reoundtext"
+            android:gravity="center"
+            android:text="Add Expenses"
+            android:textColor="@color/darktxt"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/setcat"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:paddingHorizontal="10dp"
+            android:layout_margin="10dp"
+            android:textSize="30sp"
+            android:background="@drawable/backbutton"
+            android:text="Add" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:id="@+id/bottomNavigationView"
+        android:layout_marginBottom="47dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/darktxt">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageButton
+                android:id="@+id/home"
+                android:clickable="true"
+                android:layout_width="48dp"
+                android:contentDescription="expense"
+                android:layout_height="48dp"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/home" >
+            </ImageButton>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="19sp"
+                android:text="Home"
+                android:textColor="@color/cardcolor"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageButton
+                android:id="@+id/budget"
+                android:clickable="true"
+                android:layout_width="48dp"
+                android:contentDescription="expense"
+                android:layout_height="48dp"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/budgetset">
+            </ImageButton>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="19sp"
+                android:text="Budget"
+                android:textColor="@color/cardcolor"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageButton
+                android:id="@+id/expense"
+                android:clickable="true"
+                android:layout_width="48dp"
+                android:contentDescription="expense"
+                android:layout_height="48dp"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/addexp" >
+            </ImageButton>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="19sp"
+                android:textColor="@color/cardcolor"
+                android:text="Expense" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1">
+            <ImageButton
+                android:id="@+id/analysis"
+                android:clickable="true"
+                android:layout_width="48dp"
+                android:contentDescription="expense"
+                android:layout_height="48dp"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/analysis" >
+            </ImageButton>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Analysis"
+                android:textSize="19sp"
+                android:textColor="@color/cardcolor"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

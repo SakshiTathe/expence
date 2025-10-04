@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="130dp"
+    android:background="@drawable/backgradient">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textcat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Category"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            android:textColor="@color/darktxt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textbug"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Month"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            android:textColor="@color/darktxt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/valuecat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Food"
+            android:textSize="22sp"
+            android:textColor="@color/feedtxt"
+            app:layout_constraintEnd_toEndOf="@+id/textcat"
+            app:layout_constraintStart_toStartOf="@+id/textcat"
+            app:layout_constraintTop_toBottomOf="@+id/textcat" />
+
+        <TextView
+            android:id="@+id/valuebug"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="October"
+            android:textColor="@color/feedtxt"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="@+id/textbug"
+            app:layout_constraintStart_toStartOf="@+id/textbug"
+            app:layout_constraintTop_toBottomOf="@+id/textbug" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:contentDescription="something"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"> <!-- Added more constraints -->
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1"
+            android:padding="16dp">
+
+            <!-- Table header row -->
+            <TableRow>
+                <TextView
+                    android:text="Date"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:textSize="22sp"
+                    android:textColor="@color/darktxt"
+                    android:gravity="center" />
+
+                <TextView
+                    android:text="Description"
+                    android:padding="5dp"
+                    android:textSize="22sp"
+                    android:textColor="@color/darktxt"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+
+                <TextView
+                    android:text="Amount"
+                    android:padding="5dp"
+                    android:textSize="22sp"
+                    android:textColor="@color/darktxt"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+            </TableRow>
+
+    </TableLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

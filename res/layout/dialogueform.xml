@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/backgradient"
+    android:orientation="vertical"
+    android:paddingHorizontal="25dp">
+    <TextView
+        android:id="@+id/expenseBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:padding="12dp"
+        android:text="Select The Category"
+        android:textColor="@color/darktxt"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etCategory"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="10dp"
+        android:paddingStart="8dp"
+        android:paddingVertical="15dp"
+        android:layout_gravity="center"
+        android:background="@drawable/reoundtext"
+        app:hintTextColor="@color/darktxt"
+        android:textColorHint="@color/hintcol"
+        android:textSize="20sp"
+        android:hint="Enter Your Category"/>
+    <EditText
+        android:id="@+id/etBudget"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="10dp"
+        android:paddingStart="8dp"
+        android:paddingVertical="15dp"
+        android:layout_gravity="center"
+        android:background="@drawable/reoundtext"
+        app:hintTextColor="@color/darktxt"
+        android:textColorHint="@color/hintcol"
+        android:textSize="20sp"
+        android:hint="Set Your Budget"/>
+
+
+</LinearLayout>

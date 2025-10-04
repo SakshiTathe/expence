@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:background="@drawable/wave"
+    android:paddingTop="15dp"
+    android:layout_height="match_parent"
+    tools:context=".categorySet">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="250dp"
+        android:layout_height="57dp"
+        android:layout_margin="7dp"
+        android:paddingRight="15dp"
+        android:gravity="center"
+        android:text="Add Category"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/addcat"
+        android:contentDescription="add category"
+        android:id="@+id/diag"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/textView"
+        android:onClick="opendialog"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recylecat"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="50dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:id="@+id/bottomNavigationView"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/darktxt">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/home"
+                android:clickable="true"
+                android:layout_width="48dp"
+                android:contentDescription="expense"
+                android:layout_height="48dp"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/home" >
+            </ImageButton>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="19sp"
+                android:text="Home"
+                android:textColor="@color/cardcolor"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/budget"
+                android:clickable="true"
+                android:layout_width="48dp"
+                android:contentDescription="expense"
+                android:layout_height="48dp"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/budgetset">
+            </ImageButton>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="19sp"
+                android:text="Budget"
+                android:textColor="@color/cardcolor"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageButton
+                android:id="@+id/expense"
+                android:clickable="true"
+                android:layout_width="48dp"
+                android:contentDescription="expense"
+                android:layout_height="48dp"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/addexp" >
+            </ImageButton>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="19sp"
+                android:textColor="@color/cardcolor"
+                android:text="Expense" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1">
+            <ImageButton
+                android:id="@+id/analysis"
+                android:clickable="true"
+                android:layout_width="48dp"
+                android:contentDescription="expense"
+                android:layout_height="48dp"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/analysis" >
+            </ImageButton>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Analysis"
+                android:textSize="19sp"
+                android:textColor="@color/cardcolor"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
