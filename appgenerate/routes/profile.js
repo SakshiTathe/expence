@@ -2,7 +2,6 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
-
 // Render Profile Page based on Role (Student/Teacher)
 router.get('/profile/:userId', ensureAuthenticated, async (req, res) => {
   try {
