@@ -1,0 +1,117 @@
+Imagine a user is trying to access a page that doesn’t exist (e.g., /profile). Instead of crashing, your app will generate a 404 Not Found error. The (http-errors package will help create that error and show the user a custom error page.
+Real-Time Use: After logging in, (express-session will store user information (like userId and userRole). So when they navigate between pages (like from the home page to the video upload page), they stay logged in.
+When a user clicks the "Upload Video" button, (multer will intercept the file from the form, and process it before sending it to MongoDB’s (GridFS for storage.
+After a user uploads a video, (gridfs-stream stores the video chunks in MongoDB across the distributed nodes. When another user tries to watch the video, GridFS retrieves and streams the video chunks from the nodes.
+HTML forms only support GET and POST methods. If you want to allow users to update or delete videos (using PUT or DELETE), (method-override helps override the method based on a query parameter or hidden field.When a user wants to delete a video, the form might use a POST request, but method-override will convert it to a DELETE request.
+After a video is uploaded successfully, a (flash message will be shown to the user like "Your video has been uploaded successfully."
+User logs in:
+The user credentials are checked via mongoose from MongoDB, and their session is created using express-session.
+A session cookie is stored in their browser using cookie-parser.
+User uploads a video:multer(process),gridfs-stream.(store,watch)
+
+
+
+//router.get('/login', authController.login);
+// ("/post",'post')  which is show, actiual name 
+//          route name :userinput,function name
+//        res.render("login"); go to page
+//        /fruit/:fruitName/:fruitColor' multiple values
+//              /:id(\\d+)/
+//             req.params.fruitName
+/*
+const express = require('express')
+const app=express();
+const path = require('path');
+
+const templatePath = path.join(__dirname, 'views');  // Make sure this path is correct
+app.use(express.json());
+app.use(express.static(templatePath));
+app.use(express.urlencoded({extended:false}));
+
+app.get("*",(req,res)=>{   404 page
+    res.render("login");
+});
+*/
+//app.set('view engine','ejs);
+/*
+ */
+/*
+const requestfilter=(req,res,next)=>{
+    if(!req.query.age){
+        res.send("please enter your age")
+    }
+    else if(req.query.age<18){
+        res.send("please age is greater")
+    }
+    else next()
+}*/
+//res.send, render,json, end,sendfile,sendstatus local, app, headersSent
+//req.query, params,body,headers method(get,post),url,cookies,ip
+//app.rout,post(save through api),put, get(read through api),use
+//put(update through api), delete
+//send: print
+// app. get(rout,function)
+// npx nodemon ./index.js
+// moddleware
+/*
+app.use(function(res,req,next)){
+
+}*/
+//npm i express -generator
+// app.get-> router.get
+// npx nodemon filemane -> npx nodemon
+// model(code)=> collection(db)
+// schems(code)=>documents(db)
+//app.flash for error handle
+//regexp
+//type: mongoose.Schema.Types.ObjectId
+//ref:'collection name'
+//button herf="/logout" logout
+//uuid multer
+app.get("/profile", (req, res) => {
+    const user = {
+        name: 'sakshi',
+        prn: 2308,
+        city: "Islampur",
+        skills: ['php', 'js', 'java', 'node']
+    }
+    res.render("stdprofile");
+});
+/*
+route.get('/api/users/:ID',(req, res) =>{
+    const IDD=Number(req.params.ID);
+    const user=users.find((user)=>user.id===IDD);
+    return res.json(user);
+})*/
+var express = require("express");
+//var router= express.Router();
+const userModel = require("./users");
+router.get("/", function (req, res) {
+    res.render("index");
+});
+router.get("/create",async function (req, res) {
+    await userModel.create({   //first run this
+        username: "harsh",
+        age: 25,
+        name: "harsh"
+    });
+    res.send("ban gaya");
+});
+//module.exports router;
+/*
+const{name,password}=req.body;
+const data=new modelName({name,passward})
+
+const data=new modelName({name:req.body.userId,password:req.body.password})
+*/
+
+/*
+app.get("/",(req,res)=>{
+    res.render("login");
+});
+*/
+
+
+
+
+

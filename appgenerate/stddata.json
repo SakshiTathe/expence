@@ -1,0 +1,207 @@
+[
+  {
+    "userId": "user1",
+    "password": "123",
+    "name": "Vera Addey",
+    "role": "student",
+    "class": "SY"
+  },
+  {
+    "userId": "user2",
+    "password": "2007",
+    "name": "Doti Keighly",
+    "role": "student",
+    "class": "SY"
+  },
+  {
+    "userId": "user3",
+    "password": "password3",
+    "name": "DUBAL YASHRAJ PRAMOD",
+    "role": "student",
+    "class": "SY"
+  },
+  {
+    "userId": "user4",
+    "password": "password4",
+    "name": "MORE GANESH VISHWAS",
+    "role": "student",
+    "class": "SY"
+  },
+  {
+    "userId": "user5",
+    "password": "password5",
+    "name": "HASE SOHAM SUNIL",
+    "role": "teacher"
+  },
+  {
+    "userId": "user6",
+    "password": "password6",
+    "name": "PATIL AVANTI ANIL",
+    "role": "țeacher"
+  },
+  {
+    "userId": "user7",
+    "password": "abc",
+    "name": "Prachi Jumrani",
+    "role": "țeacher"
+  },
+  {
+    "userId": "user8",
+    "password": "password8",
+    "name": "Dr. S. N. Yadav",
+    "role": "teacher"
+  },
+  {
+    "userId": "user9",
+    "password": "password9",
+    "name": "Ardella Wrangle",
+    "role": "teacher"
+  },
+  {
+    "userId": "user15",
+    "password": "password15",
+    "name": "Cyndia Brooksbank",
+    "role": "student",
+    "class": "TY"
+  },
+  {
+    "userId": "user16",
+    "password": "password16",
+    "name": "Courtney Tumioto",
+    "role": "student",
+    "class": "FY"
+  },
+  {
+    "userId": "user17",
+    "password": "password17",
+    "name": "Lynette Yitzovicz",
+    "role": "student᠎",
+    "class": "FY"
+  },
+  {
+    "userId": "user18",
+    "password": "password18",
+    "name": "Roselin Cracoe",
+    "role": "student",
+    "class": "TY"
+  },
+  {
+    "userId": "user19",
+    "password": "password19",
+    "name": "Ofilia Clear",
+    "role": "student",
+    "class": "FY"
+  },
+  {
+    "userId": "user20",
+    "password": "password20",
+    "name": "Alvan O'Fihily",
+    "role": "student",
+    "class": "TY"
+  },
+  {
+    "userId": "user21",
+    "password": "password21",
+    "name": "Thebault Major",
+    "role": "student",
+    "class": "FY"
+  },
+  {
+    "userId": "user22",
+    "password": "password22",
+    "name": "Sher Heasly",
+    "role": "student",
+    "class": "FY"
+  },
+  {
+    "userId": "user23",
+    "password": "password23",
+    "name": "Neila Mounsie",
+    "role": "student",
+    "class": "TY"
+  },
+  {
+    "userId": "user24",
+    "password": "password24",
+    "name": "Field Bott",
+    "role": "student",
+    "class": "FY"
+  },
+  {
+    "userId": "user25",
+    "password": "password25",
+    "name": "Janeen Ondrasek",
+    "role": "student",
+    "class": "TY"
+  },
+  {
+    "userId": "user26",
+    "password": "password26",
+    "name": "Carrie Jedraszek",
+    "role": "student",
+    "class": "FY"
+  },
+  {
+    "userId": "user27",
+    "password": "password27",
+    "name": "Betsy Champniss",
+    "role": "student",
+    "class": "FY"
+  },
+  {
+    "userId": "user28",
+    "password": "password28",
+    "name": "Sonia Chalfain",
+    "role": "student",
+    "class": "TY"
+  },
+  {
+    "userId": "user29",
+    "password": "password29",
+    "name": "Junie Harwick",
+    "role": "student",
+    "class": "SY"
+  },
+  {
+    "userId": "user30",
+    "password": "password30",
+    "name": "Katha Fullylove",
+    "role": "student",
+    "class": "SY"
+  },
+  {
+    "userId": "user10",
+    "password": "password10",
+    "name": "Peadar Laverty",
+    "role": "student",
+    "class": "FY"
+  },
+  {
+    "userId": "user11",
+    "password": "password11",
+    "name": "Tobin Abramowitch",
+    "role": "student",
+    "class": "SY"
+  },
+  {
+    "userId": "user12",
+    "password": "password12",
+    "name": "Consuela Gallego",
+    "role": "student ",
+    "class": "FY"
+  },
+  {
+    "userId": "user13",
+    "password": "password13",
+    "name": "Morley Hourican",
+    "role": "student",
+    "class": "FY"
+  },
+  {
+    "userId": "user14",
+    "password": "password14",
+    "name": "Phebe Josiah",
+    "role": "student",
+    "class": "TY"
+  }
+]
