@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/login.css">
+</head>
+<body class="bg-dark d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4">
+        <div class="text-center mb-4 logoback">
+            <h5>K. E. Society's</h5>
+            <h6>RajaramBapu Institute of Technology</h6>
+            <img src="/images/loginsymblo.jpg" alt="RIT Logo" class="img-fluid my-3" style="width: 150px;">
+        </div>
+        <div class="login-box p-3">
+            <h4 class="text-center mb-3">Please Sign In</h4>
+            <% if(errorMessage){%>
+                <div  role="alert">
+                    <p class="wrongpass" style="font-size: 13px; color: #ffc107;"><%= errorMessage%></p>
+                </div>
+            <%} %>
+            <form action="/login" method="POST">
+                <div class="mb-3">
+                    <input type="text" name="userIdd" class="form-control" id="userId" placeholder="User ID">
+                </div>
+                <div class="mb-3">
+                    <input type="password" name="passwordd" class="form-control" id="password" placeholder="Password">
+                </div>
+                    <button class="btn btn-primary w-50">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script></script>
+</body>
+</html>

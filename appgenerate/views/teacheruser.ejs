@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/teacheruser.css">
+    <link rel="stylesheet" href="/stylesheets/frontpage.css">
+    <link rel="stylesheet" href="/icons/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <div class="d-flex">
+        <nav id="sidebar" class="bg-dark text-light p-2">
+            <div class="sidebar-headerr">
+                <p alt="eLearning Hub Logo" class="logo">eLearningHub</p>
+            </div>
+            
+            <ul class="list-unstyled sidenav custnav mt-4">
+                <li class="nav-item">
+                    <div class="sidebar-header">
+                        <a href="#" class="text-light" id="toggle-btn"><i class="fa-solid fa-bars fa-2xl me-3"></i><span class="nav-text">Menu</span></a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="/front" class="text-light"><i class="fa-solid fa-house-chimney fa-2xl me-3"></i><span class="nav-text">Home</span></a></li>
+                <li class="nav-item"><a href="/faculty" class="text-light"><i class="fa-solid fa-person-chalkboard fa-2xl me-3"></i><span class="nav-text">faculty</span></a></li>
+                <li class="nav-item"><a href="/watch" class="text-light"><i class="fa-regular fa-clock fa-2xl me-3"></i><span class="nav-text">watch</span></a></li>
+                <li class="nav-item"><a href="/" class="text-light"><i class="fa-solid fa-right-from-bracket fa-2xl me-3"></i><span class="nav-text">Logout</span></a></li>
+            </ul>
+        </nav>
+
+        <!-- Main content -->
+        <div id="content" class="w-100">
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
+                <div class="container-fluid">
+                    <div class="search-bar mx-auto d-flex align-items-center">
+                        <input class="form-control me-2 search-input" type="search" placeholder="What do you want to learn?" aria-label="Search">
+                        <i class="fa-solid fa-magnifying-glass fa-xl search-icon"></i>
+                    </div>
+                    <div class="d-flex">
+                        <button class="btn btn-outline-secondary me-2" type="button"><i class="fa-solid fa-bell fa-2xl"></i></button>
+                        <!--
+                            <button class="btn btn-outline-secondary"  name="profileclick" type="button"><i class="fa-solid fa-circle-user fa-lg fa-2xl" style="color: #63E6BE;"></i></button>                       
+                        -->
+                            <!--
+
+                            -->
+                            <a href="/profiles">
+                                <img src="<%= user.profileImage %>" alt="Profile Image" class="profile-img" style="height: 50px; width: 50px; border-radius: 50%;"/>
+                            </a>
+                    </div>
+                </div>
+            </nav>
+    <div class="container-fluid p-3">
+        <div class="row" style="width: 100%;">
+            <div class="d-flex justify-content-center">
+                <div class="card mb-3" style="max-width: 60rem; height: 100%">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <div class="card text-white d-flex" style="max-width: 100%; height: 18rem">
+                                <div class="card-body">
+                                    <img src="<%= user.profileImage %>" class="stdimg" alt="Teacher profile image">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <div>
+                                    <div style="margin: 10px;">
+                                        <p class="stdp">Username: <%= user.name %>
+                                        </p>
+                                        <p class="stdp">UserID: <%= user.userId %>
+                                        </p>
+                                        <p class="stdp">Email ID: <%= user.email %>
+                                        </p>
+                                    </div>
+
+                                    <form>
+                                        <div class="stdp d-flex justify-content-between" style="margin: 10px;">
+                                            <input type="textarea" id="changeabout" class="form-control"
+                                                placeholder="About">
+                                            <button class="editbtn" type="button">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
+                                                    fill="currentColor" class="bi bi-pencil-fill editbtn"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </form>
+                                    <div style="margin-left: 11px; width: 120px;" class="stdp">
+                                        <a href="/upload" class="text-light">
+                                            <button type="button" class="btn btn-primary" style="height: 38px;">
+                                                <i class="fa-solid fa-upload" style="color: #63E6BE;"></i>
+                                                <!-- 
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-upload" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
+                                                    <path
+                                                        d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708z" />
+                                                </svg>
+                                                -->
+                                                Upload 
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conditionally display videos if uploaded -->
+            <% if (user.uploadedVideos.length>0) { %>
+                <div class="container mt-4">
+                    <div class="row">
+                        <!-- Video Cards -->
+                        <% user.uploadedVideos.forEach(newVideo=> { %>
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="card">
+                                    <a href="/watch">
+                                        <video width="320" height="240" class="card-img-top" controls>
+                                            <source src="<%= newVideo.title %>" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </a>
+                                    <div class="row card-body">
+                                        <div class="col-2">
+                                            <img src="<%= user.profileImage %>" class="profileimg rounded-circle me-3"
+                                                alt="Profile">
+                                        </div>
+                                        <div class="col-9">
+                                            <div class="row">
+                                                <p class="card-text">
+                                                    <%= newVideo.title %>
+                                                </p>
+                                            </div>
+                                            <div class="row">
+                                                <p class="card-text">
+                                                    <%= newVideo.description %>
+                                                </p>
+                                            </div>
+                                            <div class="me-3">
+                                                <span style="margin:10px;">
+                                                    <i class="fa-solid fa-thumbs-up fa-xl"
+                                                        style="color: #63E6BE;"></i></span>
+                                                <span style="margin-right: 5px;">10</span>
+                                                <span class="ms-2" style="margin:10px;">
+                                                    <i class="fa-solid fa-thumbs-down fa-xl"
+                                                        style="color: #63E6BE;"></i>
+                                                </span>
+                                                <span style="margin-right: 18px;">20</span>
+                                                <span class="ms-2" style="margin:15px;">
+                                                    <i class="fa-regular fa-clock fa-xl" style="color: #63E6BE;"></i>
+                                                </span>
+                                                <span class="ms-2" id="deletediag" style="margin:18px;">
+                                                    <i class="fa-solid fa-trash fa-xl"  onclick="openDeleteDialog('<%= newVideo._id %>')" style="color: #63E6BE;"></i>
+                                                </span>
+                                                <dialog id="deleteDialog<%= newVideo._id %>" class="delete-dialog">
+                                                    <p class="dialog-text">Do you want to delete this video?</p>
+                                                    <div class="dialog-buttons">
+                                                        <button class="dialog-button confirm" onclick="confirmDelete('<%= newVideo._id %>')">Yes</button>
+                                                        <button class="dialog-button cancel" onclick="closeDeleteDialog('<%= newVideo._id %>')">No</button>
+                                                    </div>
+                                                </dialog>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <% }); %>
+                    </div>
+                </div>
+                <% } else { %>
+                    <p>No videos uploaded yet.</p>
+                    <% } %>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        let videoId = '';
+        function openDeleteDialog(videoId) {
+    const dialog = document.getElementById(`deleteDialog${videoId}`);
+    dialog.style.display = 'block';
+}
+
+function closeDeleteDialog(videoId) {
+    const dialog = document.getElementById(`deleteDialog${videoId}`);
+    dialog.style.display = 'none';
+}
+
+        function confirmDelete(videoId){
+                fetch('/delete/' + videoId, {
+                method: 'DELETE'
+                })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Video deleted successfully');
+                        alert('Video deleted successfully');
+            window.location.reload(); // Reload the page to update the list
+                    } else {
+                        alert('Failed to delete video'); }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            }
+    </script>
+</body>
+
+</html>

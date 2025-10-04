@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/teacheruser.css">
+</head>
+
+<body>
+    <div class="container-fluid p-3">
+        <div class="row">
+            <div class="row mb-4">
+                <div class="col-12 d-flex align-items-center">
+                    <a href="#" class="text-light me-3"><i class="fa-solid fa-arrow-left"
+                            style="color: #63E6BE;"></i></a>
+                    <h3 class="text-light">Profile</h3>
+                </div>
+            </div>
+            <div class="container row" style="box-sizing: content-box;">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-3 text-center">
+                        <div class="profile-pic-container">
+                            <img src="/public/images/profilefigma.jpg" class="rounded-circle img-fluid"
+                                alt="Profile Picture">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <form>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Name">
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Email">
+                            </div>
+                            <div class="mb-3">
+                                <input type="textarea" class="form-control" placeholder="About">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <% if(profile && profile.length > 0){ %>
+            <div class="container mt-4"> 
+                <div class="row">
+                    <!-- Video Card -->
+                    <% profile.forEach(teacher => { %>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card">
+                                <a href="/watch">
+                                <video width="320" height="240" src="video-thumbnail.png" class="card-img-top" alt="Video Thumbnail" controls>
+                                    <source src="/public/images/deom.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </a>
+                                </video>
+                                <div class="row card-body" >
+                                    <div class="col-2 "><img src="/public/images/profilefigma.jpg " class="profileimg rounded-circle me-3" alt="Profile"></div>
+                                    <div class="col-9">
+                                        <!--= user.name%>-->
+                                        <div class="row"><p class="card-text">Title</p></div>
+                                        <div class="row">
+                                            <p class="card-text">loream thruhfjfhj h</p>
+                                    <i class="bi bi-clock"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-1 align-self-start"><i class="fa-solid fa-xl fa-ellipsis-vertical" style="color: #63E6BE;"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <% }); %>
+                    <!-- Repeat similar blocks for other videos -->
+                    <!-- ... -->
+                </div>
+            </div>
+            <% } else { %>
+                <p>No teachers found.</p>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

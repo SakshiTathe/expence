@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/frontpage.css">
+    <link rel="stylesheet" href="/icons/css/all.css">
+    <style>
+        .profile-box img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="d-flex">
+        <nav id="sidebar" class="bg-dark text-light p-3">
+            <div class="sidebar-headerr">
+                <p alt="eLearning Hub Logo" class="logo">eLearningHub</p>
+            </div>
+
+            <ul class="list-unstyled sidenav custnav mt-4">
+                <li class="nav-item">
+                    <div class="sidebar-header">
+                        <a href="#" class="text-light" id="toggle-btn"><i class="fa-solid fa-bars fa-2xl me-3"></i><span
+                                class="nav-text">Menu</span></a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="/front" class="text-light"><i class="fa-solid fa-house-chimney fa-2xl me-3"></i><span class="nav-text">Home</span></a></li>
+                <li class="nav-item"><a href="/faculty" class="text-light"><i class="fa-solid fa-person-chalkboard fa-2xl me-3"></i><span class="nav-text">faculty</span></a></li>
+                <li class="nav-item"><a href="/watch" class="text-light"><i class="fa-regular fa-clock fa-2xl me-3"></i><span class="nav-text">watch</span></a></li>
+                <li class="nav-item"><a href="/" class="text-light"><i class="fa-solid fa-right-from-bracket fa-2xl me-3"></i><span class="nav-text">Logout</span></a></li>
+            
+            </ul>
+        </nav>
+
+        <!-- Main content -->
+        <div id="content" class="w-100">
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
+                <div class="container-fluid">
+                    <div class="search-bar mx-auto d-flex align-items-center">
+                        <input class="form-control me-2 search-input" type="search" placeholder="What do you want to learn?" aria-label="Search">
+                        <i class="fa-solid fa-magnifying-glass fa-xl search-icon"></i>
+                    </div>
+                    <div class="d-flex">
+                        <button class="btn btn-outline-secondary me-2" type="button"><i class="fa-solid fa-bell fa-2xl"></i></button>
+                        <button class="btn btn-outline-secondary" type="button"><i class="fa-solid fa-circle-user fa-lg fa-2xl" style="color: #63E6BE;"></i></button>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Video Grid -->
+            <% if(profile && profile.length > 0){ %>
+            <div class="col-md-10 mx-auto px-3">
+                <div class="row text-center">
+                    <!-- Profile Box 1 -->
+                    <% profile.forEach(teacher => { %>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="profile-box">
+                            <img src="<%= teacher.profileImage %>" class="rounded-circle img-fluid" alt="Profile">
+                            <h5 class="mt-2"><%= teacher.name %></h5>
+                            <h5 class="mt-2">Nothing</h5>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+            <% } else { %>
+                <p>No teachers found.</p>
+                <% } %>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

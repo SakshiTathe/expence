@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eLearning Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/frontpage.css">
+    <link rel="stylesheet" href="/icons/css/all.css">
+
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="d-flex">
+        <nav id="sidebar" class="bg-dark text-light p-2">
+            <div class="sidebar-headerr">
+                <p alt="eLearning Hub Logo" class="logo">eLearningHub</p>
+            </div>
+
+            <ul class="list-unstyled sidenav custnav mt-4">
+                <li class="nav-item">
+                    <div class="sidebar-header">
+                        <a href="#" class="text-light" id="toggle-btn"><i class="fa-solid fa-bars fa-2xl me-3"></i><span
+                                class="nav-text">Menu</span></a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="/front" class="text-light"><i
+                            class="fa-solid fa-house-chimney fa-2xl me-3"></i><span class="nav-text">Home</span></a>
+                </li>
+                <li class="nav-item"><a href="/faculty" class="text-light"><i
+                            class="fa-solid fa-person-chalkboard fa-2xl me-3"></i><span
+                            class="nav-text">faculty</span></a></li>
+                <li class="nav-item"><a href="/watch" class="text-light"><i
+                            class="fa-regular fa-clock fa-2xl me-3"></i><span class="nav-text">watch</span></a></li>
+                <li class="nav-item"><a href="/" class="text-light"><i
+                            class="fa-solid fa-right-from-bracket fa-2xl me-3"></i><span
+                            class="nav-text">Logout</span></a></li>
+            </ul>
+        </nav>
+
+        <!-- Main content -->
+        <div id="content" class="w-100">
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
+                <div class="container-fluid">
+                    <div class="search-bar mx-auto d-flex align-items-center">
+                        <input class="form-control me-2 search-input" type="search"
+                            placeholder="What do you want to learn?" aria-label="Search">
+                        <i class="fa-solid fa-magnifying-glass fa-xl search-icon"></i>
+                    </div>
+                    <div class="d-flex">
+                        <button class="btn btn-outline-secondary me-2" type="button"><i
+                                class="fa-solid fa-bell fa-2xl"></i></button>
+                        <!--
+                            <button class="btn btn-outline-secondary"  name="profileclick" type="button"><i class="fa-solid fa-circle-user fa-lg fa-2xl" style="color: #63E6BE;"></i></button>                       
+                        -->
+                        <!--
+
+                            -->
+                        <a href="/profiles">
+                            <img src="<%= user.profileImage %>" alt="Profile Image" class="profile-img"
+                                style="height: 50px; width: 50px; border-radius: 50%;" />
+                        </a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Video Grid -->
+            <!-- Video Grid -->
+            <% if (videos.length> 0) { %>
+                <div class="container mt-4">
+                    <div class="row">
+                        <!-- Video Cards -->
+                        <% videos.forEach(newVideo=> { %>
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <a class="card watchthis" href="/watch" data-video-id-watch="<%= newVideo._id %>">
+                                    <div>
+                                        <video width="320" height="240" class="card-img-top" controls>
+                                            <source src="<%= newVideo.title %>" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                    <div class="row card-body">
+                                        <div class="col-2 profileimg">
+                                            <img src="<%= newVideo.uploadedBy.profileImage %>"
+                                                class="rounded-circle me-3" alt="Profile">
+                                        </div>
+                                        <div class="col-9">
+                                            <div class="row">
+                                                <p class="card-text">
+                                                    <%= newVideo.uploadedBy.name %>
+                                                </p>
+                                            </div>
+                                            <div class="row">
+                                                <p class="card-text">
+                                                    <%= newVideo.title %>
+                                                </p>
+                                                <i class="bi bi-clock"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-1 align-self-start watch-later-icon" style="margin-right: 10px;">
+                                            <i class="fa-regular fa-clock fa-xl" data-video-id="<%= newVideo._id %>" style="cursor: pointer;color: #63E6BE;"></i>
+                                        </div>
+                                        
+                                        <!--
+                                <i class="fa-solid fa-xl fa-ellipsis-vertical" style="color: #63E6BE;"></i>
+                            -->
+                                        <!--
+                                <span style="margin-right: 18px;">20</span>
+                                <span class="ms-2" style="margin:15px;">
+                                    <i class="fa-regular fa-clock fa-xl" style="color: #63E6BE;"></i>
+                                </span>
+                            -->
+                                    </div>
+                                </a>
+                            </div>
+                            <% }); %>
+                    </div>
+                </div>
+                <% } else { %>
+                    <p>No videos uploaded yet.</p>
+                    <% } %>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+    <script src="/javascripts/script.js"></script>
+    <script>
+        document.querySelectorAll('.watch-later-icon i').forEach(icon => {
+            icon.addEventListener('click', function () {
+                const videoId = this.getAttribute('data-video-id');
+                console.log(videoId);
+                fetch(`/watch-later/${videoId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        alert('Video added to Watch Later');
+                    } else {
+                        alert('Failed to add video to Watch Later');
+                    }
+                }).catch(error => {
+                    console.error('Error adding video to Watch Later:', error);
+                });
+            });
+        });
+        Array.from(document.getElementsByClassName('watchthis')).forEach(icon => {
+            icon.addEventListener('click', function () {
+                const videoId = this.getAttribute('data-video-id-watch');
+                //console.log(videoId);
+                fetch(`/watch/${videoId}`, {
+                    method: 'get'
+                }).then(response => {
+                    if (response.ok) {
+                        window.location.href = `/watch/${videoId}`;
+                    } else {
+                        alert('Failed to add video to Watch');
+                    }
+                }).catch(error => {
+                    console.error('Error to  Watch video', error);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>eLearning Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/stylesheets/frontpage.css" />
+    <link rel="stylesheet" href="/icons/css/all.css" />
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="d-flex">
+        <nav id="sidebar" class="bg-dark text-light p-3">
+            <div class="sidebar-headerr">
+                <p alt="eLearning Hub Logo" class="logo">eLearningHub</p>
+            </div>
+
+            <ul class="list-unstyled sidenav custnav mt-4">
+                <li class="nav-item">
+                    <div class="sidebar-header">
+                        <a href="#" class="text-light" id="toggle-btn"><i class="fa-solid fa-bars fa-2xl me-3"></i><span
+                                class="nav-text">Menu</span></a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="/front" class="text-light"><i class="fa-solid fa-house-chimney fa-2xl me-3"></i><span
+                            class="nav-text">Home</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="/faculty" class="text-light"><i class="fa-solid fa-person-chalkboard fa-2xl me-3"></i><span
+                            class="nav-text">faculty</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="/watch" class="text-light"><i class="fa-regular fa-clock fa-2xl me-3"></i><span
+                            class="nav-text">watch</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="/" class="text-light"><i class="fa-solid fa-right-from-bracket fa-2xl me-3"></i><span
+                            class="nav-text">Logout</span></a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main content -->
+        <div id="content" class="w-100">
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
+                <div class="container-fluid">
+                    <div class="search-bar mx-auto d-flex align-items-center">
+                        <input class="form-control me-2 search-input" type="search"
+                            placeholder="What do you want to learn?" aria-label="Search" />
+                        <i class="fa-solid fa-magnifying-glass fa-xl search-icon"></i>
+                    </div>
+                    <div class="d-flex">
+                        <button class="btn btn-outline-secondary me-2" type="button">
+                            <i class="fa-solid fa-bell fa-2xl"></i>
+                        </button>
+                        <a href="/profiles">
+                            <img src="<%= user.profileImage %>" alt="Profile Image" class="profile-img"
+                                style="height: 50px; width: 50px; border-radius: 50%;" />
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            <% if (videos.length> 0) { %>
+                <div class="container mt-4">
+                    <div class="row">
+                        <!-- Video Grid -->
+                        <% videos.forEach(newVideo=> { %>
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="card">
+                                    <a href="/watch/<%= newVideo._id %>">
+                                        <video width="320" height="240" class="card-img-top" controls>
+                                            <source src="<%= newVideo.title %>" type="video/mp4" />
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </a>
+                                    <div class="row card-body">
+                                        <div class="col-2 profileimg">
+                                            <img src="<%= newVideo.uploadedBy.profileImage %>"
+                                                class="rounded-circle me-3" alt="Profile" />
+                                        </div>
+                                        <div class="col-9">
+                                            <div class="row">
+                                                <p class="card-text">
+                                                    <%= newVideo.uploadedBy.name %>
+                                                </p>
+                                            </div>
+                                            <div class="row">
+                                                <p class="card-text">
+                                                    <%= newVideo.title %>
+                                                </p>
+                                                <i class="bi bi-clock"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <% }); %>
+                    </div>
+                </div>
+                <% } else { %>
+                    <p>No videos in watch later list yet.</p>
+                    <% } %>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+    <script src="/javascripts/script.js"></script>
+</body>
+
+</html>
